@@ -44,7 +44,7 @@ hide_st_style = """
 
 # setting up the page config here.
 st.set_page_config(
-    page_title="MyDrBuddy",
+    page_title="MyCareAI",
     page_icon=r"static\\favicon.png",
     layout="wide",
     initial_sidebar_state="expanded",
@@ -653,8 +653,9 @@ def medical_chatbot():
 
 with st.sidebar:
     selected = option_menu(
-        menu_title="MyDrBuddy",
-        options=["Home", "Recommendations", "Generate Report", "Chat With Me", "WorkFlow", "Account"],
+        menu_title="MyCareAI",
+        options=["Home", "Recommendations", "Generate Report", "Chat With Me", "WorkFlow", "Account"], 
+        # options=["Home", "Recommendations", "Account"], Comment it later
         icons=["house", "magic", "book", "chat", "activity", "gear"],
         menu_icon="app-indicator",
         default_index=0,
@@ -664,41 +665,41 @@ with st.sidebar:
 if selected == "Home":
     col1, col2 = st.columns([2, 1])
     with col1:
-        st.title('MyDrBuddy 🩺')
+        st.title('MyCareAI 🩺')
         st.header("Your Personalized 🪄 Doctor Buddy 👨🏻‍⚕️")
         st.divider()
         st.header("About 👨🏻‍⚕️🩺")
         # st.markdown('''
-        # MyDrBuddy is an innovative application designed to revolutionize the way you manage your health.
+        # MyCareAI is an innovative application designed to revolutionize the way you manage your health.
         # Our intelligent machine learning model accurately predicts potential diseases based on your symptoms, 
         # providing you with timely insights and empowering you to take control of your well-being. 🏥✨
         # ''')
         # st.markdown('''
-        # ### Join the `MyDrBuddy` Community 😃
-        # Take charge of your health with MyDrBuddy! 🌟 Download the app today and experience the future of health management.
+        # ### Join the `MyCareAI` Community 😃
+        # Take charge of your health with MyCareAI! 🌟 Download the app today and experience the future of health management.
         # Connect with us on social media and be part of a community that values well-being and proactive health management.
         # ''')
-        # st.markdown("_Stay healthy, stay informed, and let MyDrBuddy be your trusted health companion_ 💪❤️")
+        # st.markdown("_Stay healthy, stay informed, and let MyCareAI be your trusted health companion_ 💪❤️")
 
         # st.markdown("#### Get Started Now!")
         # st.markdown("DocBuddy is here to help you live your healthiest life!")
         
         st.markdown('''
-        MyDrBuddy is your **AI-driven health partner**, created to reshape how you stay on top of your well-being.
+        MyCareAI is your **AI-Powered Health Assistnt**, created to reshape how you stay on top of your well-being.
         Our cutting-edge machine learning model interprets your symptoms with remarkable accuracy, 
         giving you personalized insights and empowering you to make informed decisions about your health. 🏥✨
         ''')
-        
+
         st.markdown('''
-        ### Join the `MyDrBuddy` Community 😃
-        Step into the future of healthcare innovation! Download MyDrBuddy today to explore a world of proactive health management. 
+        ### Join the `MyCareAI` Community 😃
+        Step into the future of healthcare innovation! Download MyCareAI today to explore a world of proactive health management. 
         Connect with us on social media to share your journey, learn from others, and be part of a thriving community that values wellness first.
         ''')
-        
-        st.markdown("_Stay inspired, stay informed, and let MyDrBuddy be your trusted companion on the road to better health_ 💪❤️")
-        
+
+        st.markdown("_Stay inspired, stay informed, and let MyCareAI be your trusted companion on the road to better health_ 💪❤️")
+
         st.markdown("#### Ready to Begin? Start Your Journey Now!")
-        st.markdown("**MyDrBuddy** stands by your side to help you **live your healthiest life**! Together, let's make wellness a priority.")
+        st.markdown("**MyCareAI** stands by your side to help you **live your healthiest life**! Together, let's make wellness a priority.")
 
 
     with col2:
@@ -708,13 +709,13 @@ if selected == "Home":
 elif selected == "WorkFlow":
     col1, col2 = st.columns([2, 1])
     with col1:
-        st.title('MyDrBuddy WorkFlow ⛑️')
+        st.title('MyCareAI WorkFlow ⛑️')
         st.header("How Does It Work? 🤔")
         st.divider()
         st.subheader("1️⃣ Symptom Input 🤒")
         st.markdown('''
             * Simply enter the symptoms you're experiencing into our user-friendly interface. Whether it's a 
-            headache, fever, or any other discomfort, MyDrBuddy is here to help.
+            headache, fever, or any other discomfort, MyCareAI is here to help.
         ''')
         st.subheader("2️⃣ Disease Prediction 🔍")
         st.markdown('''
@@ -722,11 +723,11 @@ elif selected == "WorkFlow":
         ''')
         st.subheader("3️⃣ Detailed Descriptions 📖")
         st.markdown('''
-            * Once a disease is predicted, MyDrBuddy provides a comprehensive description of the condition. You'll learn about its causes, symptoms, and potential treatments, helping you understand your health better.
+            * Once a disease is predicted, MyCareAI provides a comprehensive description of the condition. You'll learn about its causes, symptoms, and potential treatments, helping you understand your health better.
         ''')
         st.subheader("4️⃣ Personalized Recommendations 🌿💊")
         st.markdown('''
-            MyDrBuddy goes beyond mere diagnosis. It offers personalized recommendations for:
+            MyCareAI goes beyond mere diagnosis. It offers personalized recommendations for:
             * `Medicines` : Find out which over-the-counter or prescription medicines can help alleviate your 
             symptoms.
             * `Workout Plans` : Get tailored exercise routines to boost your overall health and manage your condition.
@@ -859,7 +860,7 @@ elif selected == "Generate Report":
                 age = st.number_input("Enter the patient Age below", placeholder="Age", value=None, min_value=1,
                                       max_value=100)
             generate = st.button("Generate DocBuddy Report ✨")
-            st.warning("⚠️ This is an automated AI generated report prepared by MyDrBuddy")
+            st.warning("⚠️ This is an automated AI generated report prepared by MyCareAI")
             st.write("It's always better to see a Doctor and consult them before taking any step further!")
             st.divider()
             if generate:
@@ -905,14 +906,14 @@ elif selected == "Chat With Me":
         if st.session_state.get("signedOut", False):
             st.markdown(f"#### Welcome, {st.session_state.user_name} 🎉")
             st.markdown("""
-                # :rainbow[Chat With MyDrBuddy 🗨️]
+                # :rainbow[Chat With MyCareAI 🗨️]
             """)
             # icon("🧑🏻‍⚕️")
             st.subheader("Medical HealthCare ChatBot `Premium`", divider="rainbow", anchor=False)
             medical_chatbot()
         else:
             st.title("Please Login First ⚠️")
-            st.subheader("Start Chatting with MyDrBuddy 🗨️")
+            st.subheader("Start Chatting with MyCareAI 🗨️")
             st.markdown("* Please go back to the Account section.")
             st.markdown("* Then go to the Login Page and Login Yourself.")
     with col2:
