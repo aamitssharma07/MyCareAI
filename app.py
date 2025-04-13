@@ -276,7 +276,7 @@ def generate_report(name, age, disease, description, precautions, workouts, diet
     current_time = now.strftime("%Y-%m-%d %H:%M:%S")
 
     # Title
-    title = Paragraph("DocBuddy Health Report", styleH)
+    title = Paragraph("MyCareAI Health Report", styleH)
     story = [title, Spacer(1, 12)]
 
     # Personal details
@@ -393,7 +393,7 @@ def get_diet(predicted_value):
 
 def account():
     st.image(r"static/Login-DocBuddy.png")
-    st.title("Welcome to DocBuddy 🩺")
+    st.title("Welcome to MyCareAI 🩺")
 
     # Create session state variables
     if "user_mail" not in st.session_state:
@@ -682,7 +682,7 @@ if selected == "Home":
         # st.markdown("_Stay healthy, stay informed, and let MyCareAI be your trusted health companion_ 💪❤️")
 
         # st.markdown("#### Get Started Now!")
-        # st.markdown("DocBuddy is here to help you live your healthiest life!")
+        # st.markdown("MyCareAI is here to help you live your healthiest life!")
         
         st.markdown('''
         MyCareAI is your **AI-Powered Health Assistnt**, created to reshape how you stay on top of your well-being.
@@ -750,7 +750,7 @@ elif selected == "Recommendations":
         # Check if the user is logged in using session state variables
         if st.session_state.get("signedOut", False):
             st.title(f"Welcome {st.session_state.user_name} 🎉")
-            st.header("DocBuddy Recommendation Center 🔮")
+            st.header("MyCareAI Recommendation Center 🔮")
             st.divider()
             symptoms_list = [
                 'itching', 'skin_rash', 'nodal_skin_eruptions', 'continuous_sneezing', 'shivering', 'chills',
@@ -851,7 +851,7 @@ elif selected == "Generate Report":
     with col1:
         if st.session_state.get("signedOut", False):
             st.title(f"Welcome {st.session_state.user_name} 🎉")
-            st.header("DocBuddy Medical Report Generation 📃")
+            st.header("MyCareAI Medical Report Generation 📃")
             st.divider()
             col3, col4 = st.columns([2, 2])
             with col3:
@@ -859,7 +859,7 @@ elif selected == "Generate Report":
             with col4:
                 age = st.number_input("Enter the patient Age below", placeholder="Age", value=None, min_value=1,
                                       max_value=100)
-            generate = st.button("Generate DocBuddy Report ✨")
+            generate = st.button("Generate MyCareAI Report ✨")
             st.warning("⚠️ This is an automated AI generated report prepared by MyCareAI")
             st.write("It's always better to see a Doctor and consult them before taking any step further!")
             st.divider()
@@ -875,19 +875,19 @@ elif selected == "Generate Report":
                             workouts=st.session_state.workout,
                             diets=st.session_state.diets,
                             medications=st.session_state.medications,
-                            file_path=f"DocBuddy_{name.title()}_Report.pdf"
+                            file_path=f"MyCareAI_{name.title()}_Report.pdf"
                         )
-                        with open(f"DocBuddy_{name.title()}_Report.pdf", "rb") as file:
+                        with open(f"MyCareAI_{name.title()}_Report.pdf", "rb") as file:
                             st.download_button(
                                 label="Download Generated Report ✅",
                                 data=file,
-                                file_name=f"DocBuddy_{name.title()}_Report.pdf",
+                                file_name=f"MyCareAI_{name.title()}_Report.pdf",
                                 mime="pdf",
                             )
                     else:
                         st.warning("⚠️ Please enter correct Name/Age to proceed")
                 else:
-                    st.warning("⚠️ It seems like you haven't got your DocBuddy Recommendations!")
+                    st.warning("⚠️ It seems like you haven't got your MyCareAI Recommendations!")
                     st.markdown("* Go to `Recommendations` tab first on the top left sidebar.")
                     st.markdown("* Get your `Recommendations` there first.")
                     st.markdown("* Then comeback here and apply for `Report Generation`.")
